@@ -1,0 +1,92 @@
+.explore-button{
+  background-color: transparent;
+  margin-top: 650px;
+  margin-right: 300px;
+  position: absolute;
+
+}
+.explore-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 18px;
+
+  font-size: 18px;
+  font-weight: 500;
+
+  background: #f9fafb;
+  color: #005245;
+  border: 2px solid #f9fafb;
+  border-radius: 999px;
+
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 1;
+
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+
+  transition: color 0.4s ease;
+}
+
+/* Hover background animation */
+
+.explore-btn::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  aspect-ratio: 1;
+  background: #005245;
+  left: -100%;
+  border-radius: 50%;
+  transition: all 0.7s ease;
+  z-index: -1;
+}
+
+.explore-btn:hover::before{
+  left: 0;
+  transform: scale(1.5);
+}
+
+.explore-btn:hover{
+  color: white;
+}
+
+/* Icon */
+
+.explore-icon{
+  width: 32px;
+  height: 32px;
+  padding: 6px;
+
+  border-radius: 50%;
+  border: 1px solid #374151;
+
+  transform: rotate(45deg);
+  transition: all 0.3s linear;
+}
+
+.explore-btn:hover .explore-icon{
+  transform: rotate(90deg);
+  background: white;
+  border: none;
+}
+
+
+/* responsive for mobile */
+
+@media screen and (max-width: 425px){
+  .explore-button{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+.explore-btn{
+  color: white;
+  background-color: #005245;
+}
+
+
+  
+}

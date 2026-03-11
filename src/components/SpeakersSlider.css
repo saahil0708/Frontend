@@ -1,0 +1,121 @@
+.speakers-section {
+  padding: 80px 5%;
+}
+
+.speaker-card {
+  position: relative;
+  height: 450px;
+  width: 95%;
+  border-radius: 30px;
+  background: #ffffff;
+  overflow: hidden;
+  z-index: 1;
+  transition:color 0.4s ease;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Hover background animation */
+
+/* .speaker-card:hover img {
+  transform: scale(1.05);
+  transition: all 0.4s ease;
+} */
+
+/* .speaker-card::before {
+  transition: all 0.5s ease;
+} */
+/* .speaker-card:hover {
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+} */
+
+/* Purple curved background */
+.speaker-card::after {
+  content: "";
+  position: absolute;
+  bottom: -50px;
+  left: -10%;
+  width: 120%;
+  height: 300px;
+  background: #005245;
+  border-radius: 50%;
+  z-index: 2;
+  transition: all 0.4s ease;
+}
+
+.speaker-card:hover::after { 
+  background: #005245;
+  z-index: -1;
+  transition: all 0.4s ease;
+  transform: scale(2.5);
+}
+
+
+
+
+.speaker-card:hover .card-content h3,
+.speaker-card:hover .card-content p{
+  color: #ffffff;
+}
+
+
+.card-content {
+  position:absolute;
+  background: transparent;
+  z-index: 1;
+  padding: 30px;
+}
+
+
+
+
+.card-content h3 {
+  font-size: 22px;
+  font-weight: 500;
+  background: transparent;
+  margin-bottom: 1px;
+}
+
+.card-content p {
+  background: transparent;
+  font-size: 15px;
+  color: #555;
+}
+
+.image-wrapper {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  background-color: transparent;
+}
+
+.image-wrapper img {
+  height: 320px;
+  object-fit:cover;
+  background-color: transparent;
+}
+
+.speaker-card:hover img {
+  transform: scale(1.05);
+  transition: all 0.4s ease;
+}
+
+.speaker-card::after img {
+  transition: all 0.4s ease;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  width: 20px;
+  height: 30px;
+  background: transparent;
+  border-radius: 50%;
+  color: rgb(227, 35, 35);
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 20px;
+  background-color: transparent;
+}

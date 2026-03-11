@@ -1,0 +1,213 @@
+.countdown-section{
+  /* padding:20px 20px; */
+  border-radius: 20px;
+  margin-right: auto;
+  margin-top: 250px;
+}
+
+/* Main container */
+
+.countdown-container{
+
+  border-radius:15px;
+  padding: 20px;
+  background-color: #98B3AC;
+  backdrop-filter: blur(10px);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:40px;
+  flex-wrap:wrap;
+  margin-left: 10px;
+}
+
+/* Timer */
+
+.timer-box{
+  display:flex;
+  gap:25px;
+  flex-wrap:wrap;
+  border-radius: 13px;
+  background-color: #0052440f;
+  backdrop-filter: blur(10px);
+}
+
+/* Cards */
+
+.time-card{
+
+
+  width:110px;
+  height:110px;
+
+  border-radius:12px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  color: #015C81;
+}
+
+/* Time second cards */
+
+.time-cards{
+
+
+  width:110px;
+  height:110px;
+
+  border-radius:12px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  color: #015C81;
+}
+.time-cards h1{
+  font-size:2.2rem;
+  margin:0;
+}
+
+.time-cards p{
+  font-size:0.9rem;
+  letter-spacing:1px;
+}
+
+
+
+.time-card h1{
+  font-size:2.2rem;
+  margin:0;
+}
+
+.time-card p{
+  font-size:0.9rem;
+  letter-spacing:1px;
+}
+
+/* Date */
+
+.conference-date{
+  color:#015C81;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.conference-date h4{
+  margin-bottom:10px;
+  font-weight: normal;
+}
+
+.conference-date p{
+  font-size:1.4rem;
+}
+
+/* Responsive Design for Tablets */
+
+
+@media screen and (max-width: 768px){
+
+  .countdown-section{
+    margin-top: 150px;
+    padding: 10px;
+  }
+
+
+  .countdown-container{
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    text-align: center;
+  }
+
+  .timer-box{
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+  }
+
+  .time-card{
+    width: 90px;
+    height: 90px;
+  }
+
+  .time-card h1{
+    font-size: 1.8rem;
+  }
+
+  .time-card p{
+    font-size: .8rem;
+  }
+
+  .conference-date{
+    padding: 10px;
+  }
+
+  .conference-date h2{
+    font-size: 1.8rem;
+  }
+
+  .conference-date p{
+    font-size: 1.1rem;
+  }
+
+}
+
+
+/* mobile  */
+
+@media screen and (max-width: 425px){
+
+
+
+  .time-cards{
+    display: none;
+  }
+
+  .countdown-section{
+    position: relative;
+    margin-top: 130px;
+  }
+
+  .timer-box{
+    gap: 12px;
+    padding: 10px;
+  }
+
+  .time-card{
+    width: 70px;
+    height: 70px;
+  }
+
+  .time-card h1{
+    font-size: 1.4rem;
+  }
+
+  .time-card p{
+    font-size: .7rem;
+  }
+  .time-cards h1{
+    font-size: 1.4rem;
+  }
+
+  .time-cards p{
+    font-size: .7rem;
+  }
+
+  .conference-date{
+    display: none;
+  }
+
+  .conference-date h2{
+    font-size: 1.4rem;
+  }
+
+  .conference-date p{
+    font-size: .9rem;
+  }
+
+}
