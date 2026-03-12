@@ -47,6 +47,15 @@ const Navbar = () => {
   const closeMenu  = () => setIsOpen(false);
   const openPopup  = () => { setShowPopup(true); closeMenu(); };
 
+  const getIsActive = (to) => {
+    const isHashLink = to.startsWith("/#");
+    if (isHashLink) {
+      const targetHash = to.substring(1);
+      return location.pathname === "/" && (location.hash === targetHash || (!location.hash && targetHash === "#home"));
+    }
+    return location.pathname === to || (to !== "/" && location.pathname.startsWith(to));
+  };
+
   return (
     <>
       {/* ── Top announcement bar ─────────────────────────── */}
@@ -75,22 +84,23 @@ const Navbar = () => {
 
         {/* Desktop links */}
         <ul className="navbar__links" role="list">
-          {NAV_LINKS.map(({ label, to }) => (
-            <li key={label}>
-              <NavLink
-                to={to}
-                className={({ isActive }) =>
-                  `navbar__link${isActive && to !== "/#home" ? " navbar__link--active" : ""}`
-                }
-              >
-                {label}
-              </NavLink>
-            </li>
-          ))}
+          {NAV_LINKS.map(({ label, to }) => {
+            const isActive = getIsActive(to);
+            return (
+              <li key={label}>
+                <Link
+                  to={to}
+                  className={`navbar__link${isActive && to !== "/#home" ? " navbar__link--active" : ""}`}
+                >
+                  {label}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
 
         {/* Desktop CTAs */}
-        <div className="navbar__actions">
+        {/* <div className="navbar__actions">
           <button
             type="button"
             className="navbar__btn navbar__btn--register"
@@ -110,7 +120,7 @@ const Navbar = () => {
             </svg>
             Login
           </Link>
-        </div>
+        </div> */}
 
         {/* Hamburger */}
         <button
@@ -137,19 +147,22 @@ const Navbar = () => {
         </div>
 
         <nav className="nav-drawer__nav">
-          {NAV_LINKS.map(({ label, to }) => (
-            <NavLink
-              key={label}
-              to={to}
-              className="nav-drawer__link"
-              onClick={closeMenu}
-            >
-              {label}
-            </NavLink>
-          ))}
+          {NAV_LINKS.map(({ label, to }) => {
+            const isActive = getIsActive(to);
+            return (
+              <Link
+                key={label}
+                to={to}
+                className={`nav-drawer__link${isActive ? " active" : ""}`}
+                onClick={closeMenu}
+              >
+                {label}
+              </Link>
+            );
+          })}
         </nav>
 
-        <div className="nav-drawer__footer">
+        {/* <div className="nav-drawer__footer">
           <button
             type="button"
             className="nav-drawer__register"
@@ -160,7 +173,7 @@ const Navbar = () => {
           <Link to="/login" className="nav-drawer__login" onClick={closeMenu}>
             Login
           </Link>
-        </div>
+        </div> */}
       </div>
 
       {/* Backdrop */}
