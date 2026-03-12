@@ -44,7 +44,7 @@ html {
    HOME CONTAINER
 ════════════════════════════════════════ */
 .home-container {
-  background-image: url('../src/photos/home.png');
+  background-image: url("../photos/home.png");
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
