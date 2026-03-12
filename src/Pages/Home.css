@@ -59,6 +59,15 @@ html {
   /* Restore to fix 'page gone above' */
 }
 
+@media screen and (max-width: 768px) {
+  .home-container {
+    background-image: url("https://14wgjdss3w.ufs.sh/f/ImvjWigzci0ZLjQz16tlfWA4nhFqCGvbYBj6gP1Jm0xHws3L");
+    background-size: cover;
+    padding-left: 20px;
+    border-radius: 0;
+  }
+}
+
 /* ════════════════════════════════════════
    ROTATING REQUEST BUTTON
 ════════════════════════════════════════ */
