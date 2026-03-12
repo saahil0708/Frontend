@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./countdown.css";
+import "./Countdown.css";
 
 const Countdown = () => {
   const targetDate = new Date("March 27, 2026 00:00:00").getTime();
