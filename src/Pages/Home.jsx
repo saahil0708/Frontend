@@ -9,6 +9,7 @@ import { Star } from "lucide-react";
 import pharma from "../photos/pharma.png";
 import overview from "../photos/overview.png";
 import cheif from "../photos/chief.png";
+import Ideathon from "../components/Ideathon.jsx";
 
 const Home = () => {
   return (
@@ -17,7 +18,6 @@ const Home = () => {
         {/* HERO SECTION */}
         <section className="home-section" id="home">
           <div className="home-container">
-            <ExploreButtom />
             <Countdown />
           </div>
         </section>
@@ -268,10 +268,6 @@ const Home = () => {
                 </p>
               </div>
 
-              <button className="register-btn">
-                Register
-              </button>
-
             </div>
 
           </div>
@@ -369,6 +365,8 @@ const Home = () => {
 
         <Tab />
       </section>
+
+      <Ideathon />
 
       {/* Decorative bridge to navy footer */}
       <div className="footer-bridge-curve">
