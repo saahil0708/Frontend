@@ -383,6 +383,99 @@ const Home = () => {
 
         <Ideathon />
 
+        {/* CALL FOR SPEAKERS SECTION */}
+        <section className="cfs-section" id="call-for-speakers">
+          {/* Decorative background elements */}
+          <div className="cfs-bg-shapes">
+            <div className="cfs-bg-pill cfs-bg-pill--1"></div>
+            <div className="cfs-bg-pill cfs-bg-pill--2"></div>
+            <div className="cfs-bg-circle cfs-bg-circle--1"></div>
+          </div>
+          <div className="cfs-inner">
+            {/* Left — text content */}
+            <div className="cfs-content">
+              <span className="cfs-tag">CALL FOR SPEAKERS</span>
+
+              <h2 className="cfs-heading">
+                Share Your Expertise on the <em>Global Stage</em>
+              </h2>
+
+              <p className="cfs-subtext">
+                We invite pharma professionals, AI researchers, clinicians, and
+                innovators to present their work at the Digi-Tech Pharma &amp; AI
+                Conference. Join a distinguished lineup of thought leaders and
+                help shape the future of pharmaceutical science.
+              </p>
+
+              <ul className="cfs-benefits">
+                <li>
+                  <span className="cfs-check">✔</span>
+                  Reach an audience of 500+ global pharma &amp; tech leaders
+                </li>
+                <li>
+                  <span className="cfs-check">✔</span>
+                  Present keynotes, workshops, or panel discussions
+                </li>
+                <li>
+                  <span className="cfs-check">✔</span>
+                  Recognised in official conference proceedings &amp; media
+                </li>
+                <li>
+                  <span className="cfs-check">✔</span>
+                  Network with top academics, industry experts &amp; regulators
+                </li>
+                <li>
+                  <span className="cfs-check">✔</span>
+                  Complimentary conference pass &amp; speaker recognition kit
+                </li>
+              </ul>
+
+              <a href="https://link.springer.com/journal/11096" target="_blank" rel="noopener noreferrer" className="cfs-link">
+                <span className="cfs-link-text">Submit Your Proposal</span>
+                <span className="cfs-link-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+
+            {/* Right — visual highlight panel */}
+            <div className="cfs-panel">
+              {/* Decorative ring */}
+              <div className="cfs-ring" aria-hidden="true"></div>
+
+              <p className="cfs-panel-eyebrow">Why Speak With Us?</p>
+
+              <div className="cfs-stats">
+                <div className="cfs-stat">
+                  <strong>500<span>+</span></strong>
+                  <span>Attendees</span>
+                </div>
+                <div className="cfs-stat">
+                  <strong>30<span>+</span></strong>
+                  <span>Expert Speakers</span>
+                </div>
+                <div className="cfs-stat">
+                  <strong>2</strong>
+                  <span>Conference Days</span>
+                </div>
+                <div className="cfs-stat">
+                  <strong>10<span>+</span></strong>
+                  <span>Session Tracks</span>
+                </div>
+              </div>
+
+              <blockquote className="cfs-quote">
+                "The best way to predict the future of pharma is to present it."
+              </blockquote>
+
+              <div className="cfs-panel-tags">
+                <span>Keynotes</span>
+                <span>Workshops</span>
+                <span>Panels</span>
+                <span>Case Studies</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Decorative bridge to navy footer */}
         <div className="footer-bridge-curve">
           <svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
