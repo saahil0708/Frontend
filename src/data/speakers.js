@@ -10,7 +10,16 @@ export const nationalSpeakers = [
     role: "Head of AI Research, IIT DELHI",
     bio: "Pioneer in artificial intelligence and deep learning, leading breakthrough research in pharmaceutical applications.",
     category: "Speaker",
-    image: natl1,
+    image: "https://14wgjdss3w.ufs.sh/f/ImvjWigzci0ZQo7S75Z4xjF2BuVXWsw7eDcnPpIrSfE1OZhM",
+    linkedin: "#"
+  },
+  {
+    id: 1,
+    name: "Prof. S. Mittal",
+    role: "Head of AI Research, IIT DELHI",
+    bio: "Pioneer in artificial intelligence and deep learning, leading breakthrough research in pharmaceutical applications.",
+    category: "Speaker",
+    image: "https://14wgjdss3w.ufs.sh/f/ImvjWigzci0ZQo7S75Z4xjF2BuVXWsw7eDcnPpIrSfE1OZhM",
     linkedin: "#"
   },
   {

@@ -8,7 +8,7 @@
 
 /* Editorial Swiper Styles */
 .speakers-swiper-editorial {
-  padding: 20px 10px 10px !important; /* Further reduced bottom padding */
+  padding: 20px 20px 30px !important; /* Further reduced bottom padding */
 }
 
 /* Card Design */
@@ -159,6 +159,8 @@
 .swiper-pagination-bullet {
   background: rgba(0, 82, 69, 0.2) !important;
   opacity: 1 !important;
+  position: relative;
+  top: 10px;
 }
 
 .swiper-pagination-bullet-active {
