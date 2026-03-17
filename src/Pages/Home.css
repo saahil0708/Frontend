@@ -40,6 +40,14 @@ html {
   }
 }
 
+/* ── MOBILE HERO IMAGE ── */
+.mobile-hero-img {
+  display: none;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
 /* ════════════════════════════════════════
    HOME CONTAINER
 ════════════════════════════════════════ */
@@ -61,9 +69,13 @@ html {
 }
 
 @media screen and (max-width: 768px) {
+  .mobile-hero-img {
+    display: block;
+  }
   .home-container {
-    background-image: url("https://14wgjdss3w.ufs.sh/f/ImvjWigzci0ZLjQz16tlfWA4nhFqCGvbYBj6gP1Jm0xHws3L");
-    background-size: cover;
+    background-image: none;
+    min-height: auto;
+    padding-top: 40px;
     padding-left: 20px;
     border-radius: 0;
   }

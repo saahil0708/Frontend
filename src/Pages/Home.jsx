@@ -55,6 +55,11 @@ const Home = () => {
       <div className="home-page-container">
         {/* HERO SECTION */}
         <section className="home-section" id="home">
+          <img
+            src="https://14wgjdss3w.ufs.sh/f/ImvjWigzci0ZLjQz16tlfWA4nhFqCGvbYBj6gP1Jm0xHws3L"
+            alt="Hero Mobile"
+            className="mobile-hero-img"
+          />
           <div className="home-container">
             <Countdown />
           </div>
