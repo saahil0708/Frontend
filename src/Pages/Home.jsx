@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Home.css";
 import Tab from "../components/Tabs.jsx";
 import SpeakersSlider from "../components/SpeakersSlider.jsx";
@@ -12,6 +12,44 @@ import cheif from "../photos/chief.png";
 import Ideathon from "../components/Ideathon.jsx";
 
 const Home = () => {
+  const [activeGuestTab, setActiveGuestTab] = useState("Chief Guest");
+
+  const guestData = {
+    "Chief Guest": [
+      {
+        name: "Dr. Deependra Singh",
+        role: "ERC, Pharmacy Council of India",
+        badge: "Honorable Chairman",
+        bio: "Leading the transformation of pharmaceutical education and AI integration standards across the nation.",
+        image: cheif,
+        linkedin: "#",
+      },
+      {
+        name: "Dr. Susheel Mittal",
+        role: "Vice Chancellor",
+        org: "IKGPTU Jalandhar, Punjab, India",
+        image: "https://14wgjdss3w.ufs.sh/f/ImvjWigzci0ZRPkD41vJES7jIiB5lhfpwM4zZRK0N2Vts6bF",
+        linkedin: "#",
+      },
+    ],
+    "Guest of Honor": [
+      {
+        name: "Mr. Gopal Krishan",
+        role: "",
+        org: "Pharmacy Council of India",
+        image: "https://14wgjdss3w.ufs.sh/f/ImvjWigzci0ZFl60TxoyOG4JnmMrRqx9ENKsAl2VUHjIZwT3",
+        linkedin: "#",
+      },
+      {
+        name: "Mr. Sushil Kumar Bansal",
+        role: "Executive Member PCI Chairman PB. Pharmacy Council.",
+        org: "",
+        image: "https://14wgjdss3w.ufs.sh/f/ImvjWigzci0ZnJF3Gr2BkCHqJP6rL9D7jaG8ze2MVlfIpEt4",
+        linkedin: "#",
+      },
+    ],
+  };
+
   return (
     <div className="home-page-wrapper">
       <div className="home-page-container">
@@ -282,6 +320,7 @@ const Home = () => {
 
         {/* GUESTS SECTION */}
         <section className="guests-wrapper" loading="lazy">
+          <div className="guests-wrapper-decor"></div>
           <div className="guests-headings-container">
             <span className="guests-tag" id="guests">HONORED GUESTS</span>
             <h2 className="guests-main-title">Esteemed Visionaries & Leaders</h2>
@@ -290,74 +329,45 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="guests-section-grid">
-            {/* LEFT: Chief Guest */}
-            <div className="chief-card-wrapper">
-              <h2 className="guest-col-title">CHIEF GUEST</h2>
+          <div className="guest-tabs-nav">
+            {Object.keys(guestData).map((tab) => (
+              <button
+                key={tab}
+                className={`guest-tab-btn ${activeGuestTab === tab ? "active" : ""}`}
+                onClick={() => setActiveGuestTab(tab)}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
 
-              <div className="chief-guest-card editorial-card">
-                <div className="chief-card-header">
-                  <div className="guest-image-wrapper chief-img-wrapper">
-                    <img src={cheif} alt="chief guest" />
+          <div className="guests-display-container">
+            <div className="guests-expansion-grid">
+              {guestData[activeGuestTab].map((guest, index) => (
+                <div key={index} className="expanded-guest-card">
+                  <div className="guest-card-inner">
+                    <div className="guest-image-box">
+                      <img src={guest.image} alt={guest.name} />
+                      <div className="guest-collapsed-info">
+                        <h3>{guest.name}</h3>
+                        <p>{guest.role}</p>
+                      </div>
+                    </div>
+                    <div className="guest-info-box">
+                      {guest.badge && <div className="guest-badge gold-badge">{guest.badge}</div>}
+                      <h3 className="guest-name">{guest.name}</h3>
+                      <p className="guest-role">{guest.role}</p>
+                      {guest.org && <p className="guest-org">{guest.org}</p>}
+                      {guest.bio && <p className="guest-bio">{guest.bio}</p>}
+                      <a href={guest.linkedin} target="_blank" rel="noopener noreferrer" className="guest-linkedin-btn">
+                        <Linkedin size={16} />
+                        LinkedIn
+                      </a>
+                    </div>
                   </div>
                 </div>
-                <div className="chief-card-body">
-                  <div className="guest-badge gold-badge">Honorable Chairman</div>
-                  <h3 className="guest-name chief-name">Dr. Deependra Singh</h3>
-                  <p className="guest-role chief-role">ERC, Pharmacy Council of India</p>
-                  <div className="editorial-divider"></div>
-                  <p className="editorial-bio">
-                    Leading the transformation of pharmaceutical education and AI integration standards across the nation.
-                  </p>
-                  <a href="#" target="_blank" rel="noopener noreferrer" className="guest-linkedin-btn">
-                    <Linkedin size={16} />
-                    LinkedIn
-                  </a>
-                </div>
-              </div>
+              ))}
             </div>
-
-            {/* RIGHT: Guests of Honor */}
-            <div className="honor-card-wrapper">
-              <h2 className="guest-col-title">GUESTS OF HONOR</h2>
-
-              <div className="honor-stack">
-
-                <div className="honor-guest-card horizontal-card">
-                  <div className="pharma-ai-icon"><Star size={20} strokeWidth={1.5} /></div>
-                  <div className="guest-image-wrapper honor-img-wrapper">
-                    <img src={cheif} alt="guest" />
-                  </div>
-                  <div className="horizontal-card-body">
-                    <p className="guest-role honor-role">Vice President</p>
-                    <h3 className="guest-name honor-name">Dr. Lalit Kumar Goel</h3>
-                    <p className="guest-org honor-org">Pharmacy Council of India</p>
-                    <a href="#" target="_blank" rel="noopener noreferrer" className="guest-linkedin-btn honor-linkedin-btn">
-                      <Linkedin size={14} />
-                      LinkedIn
-                    </a>
-                  </div>
-                </div>
-
-                <div className="honor-guest-card horizontal-card">
-                  <div className="pharma-ai-icon"><Star size={20} strokeWidth={1.5} /></div>
-                  <div className="guest-image-wrapper honor-img-wrapper">
-                    <img src={cheif} alt="guest" />
-                  </div>
-                  <div className="horizontal-card-body">
-                    <p className="guest-role honor-role">Member</p>
-                    <h3 className="guest-name honor-name">Dr. Sandeep Kumar</h3>
-                    <p className="guest-org honor-org">Pharmacy Council of India</p>
-                    <a href="#" target="_blank" rel="noopener noreferrer" className="guest-linkedin-btn honor-linkedin-btn">
-                      <Linkedin size={14} />
-                      LinkedIn
-                    </a>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
           </div>
         </section>
 
