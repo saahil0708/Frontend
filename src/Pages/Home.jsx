@@ -112,12 +112,12 @@ const Home = () => {
         image: "https://ljce5xqitn.ufs.sh/f/IJaVNK1rdRloetf0tCr3WRTUHAcjaCNQZliGExd0g5q81vhz",
         linkedin: "#",
       },
-      {
-        name: "TBA",
-        role: "Co-Patron",
-        image: "https://via.placeholder.com/400x500",
-        linkedin: "#",
-      },
+      // {
+      //   name: "TBA",
+      //   role: "Co-Patron",
+      //   image: "https://via.placeholder.com/400x500",
+      //   linkedin: "#",
+      // },
     ],
     "Convenors": [
       {
