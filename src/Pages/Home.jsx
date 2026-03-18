@@ -50,6 +50,91 @@ const Home = () => {
     ],
   };
 
+  const [activePatronTab, setActivePatronTab] = useState("Chief Patrons");
+
+  const patronData = {
+    "Chief Patrons": [
+      {
+        name: "Mr. Ashwani Garg",
+        role: "Chairman, SVGOI",
+        image: "https://ljce5xqitn.ufs.sh/f/IJaVNK1rdRlouMJoohIvE2FjWzl3KsrnUCQN1XmMgHoBvwtp",
+        linkedin: "#",
+      },
+      {
+        name: "Mr. Ashok Garg",
+        role: "President, SVGOI",
+        image: "https://ljce5xqitn.ufs.sh/f/IJaVNK1rdRlosW19FLBvCDm2nN4yVSdfHKJxZb1AQPjklcYt",
+        linkedin: "#",
+      },
+    ],
+    "Patrons": [
+      {
+        name: "Er. Vishal Garg",
+        role: "Director Secretarial, SVGOI",
+        image: "https://ljce5xqitn.ufs.sh/f/IJaVNK1rdRloCmQ6VlKHMESZ09lDLJrXztUB8iOGpw7PF2sb",
+        linkedin: "#",
+      },
+      {
+        name: "Er. Sahil Garg",
+        role: "Project Director, SVGOI",
+        image: "https://ljce5xqitn.ufs.sh/f/IJaVNK1rdRlogE8XsKzZfV7GO50pNth8DPSg6iox4W9ydvqn",
+        linkedin: "#",
+      },
+      {
+        name: "Adv. Subham Garg",
+        role: "Director of Placement, SVGOI",
+        image: "https://ljce5xqitn.ufs.sh/f/IJaVNK1rdRlobnALAg5yk0O4s1fUZdglJEiuBoqGcK5FCSma",
+        linkedin: "#",
+      },
+      {
+        name: "Er. Ankur Gill",
+        role: "Director Operations, SVGOI",
+        image: "https://ljce5xqitn.ufs.sh/f/IJaVNK1rdRlofSrDBng0GyHLckOQps3UR4NaPSEhBziV8KrI",
+        linkedin: "#",
+      },
+      {
+        name: "Mr. Ankur Gupta",
+        role: "Director Finance, SVGOI",
+        image: "https://ljce5xqitn.ufs.sh/f/IJaVNK1rdRlo3s7YDfCpG8zAKh0vR4l6MLxUInrduCTWOJej",
+        linkedin: "#",
+      },
+    ],
+    "Co-Patrons": [
+      {
+        name: "Dr. Sanjeev Saini",
+        role: "Director Academics, SVGOI",
+        image: "https://ljce5xqitn.ufs.sh/f/IJaVNK1rdRloq7wh8Q63KU0ko5JWfMm1Y2zVpecnNa89xwRG",
+        linkedin: "#",
+      },
+      {
+        name: "Dr. AK Tiwari",
+        role: "Director Research, SVGOI",
+        image: "https://ljce5xqitn.ufs.sh/f/IJaVNK1rdRloetf0tCr3WRTUHAcjaCNQZliGExd0g5q81vhz",
+        linkedin: "#",
+      },
+      {
+        name: "TBA",
+        role: "Co-Patron",
+        image: "https://via.placeholder.com/400x500",
+        linkedin: "#",
+      },
+    ],
+    "Convenors": [
+      {
+        name: "Dr.Manish Goswami",
+        role: "Principal, SVCP",
+        image: "https://ljce5xqitn.ufs.sh/f/IJaVNK1rdRlo5r8AUtxQpukCUVmqBRKWhaFEP69NZbSv1ezg",
+        linkedin: "#",
+      },
+      {
+        name: "Dr. Amit Goyal",
+        role: "Principal, SVIP",
+        image: "https://ljce5xqitn.ufs.sh/f/IJaVNK1rdRlovvmR2rPhwXgcOBZUobduYnD9ItHVFGz1kWlf",
+        linkedin: "#",
+      },
+    ],
+  };
+
   return (
     <div className="home-page-wrapper">
       <div className="home-page-container">
@@ -365,6 +450,55 @@ const Home = () => {
                       {guest.org && <p className="guest-org">{guest.org}</p>}
                       {guest.bio && <p className="guest-bio">{guest.bio}</p>}
                       <a href={guest.linkedin} target="_blank" rel="noopener noreferrer" className="guest-linkedin-btn">
+                        <Linkedin size={16} />
+                        LinkedIn
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* PATRONS SECTION */}
+        <section className="patrons-wrapper" loading="lazy">
+          <div className="patrons-headings-container">
+            <span className="patrons-tag" id="patrons">CONFERENCE PATRONS</span>
+            <h2 className="patrons-main-title">Guidance & Support</h2>
+            <p className="patrons-description">
+              Acknowledging the distinguished leaders who provide the vision and support for this conference.
+            </p>
+          </div>
+
+          <div className="patron-tabs-nav">
+            {Object.keys(patronData).map((tab) => (
+              <button
+                key={tab}
+                className={`patron-tab-btn ${activePatronTab === tab ? "active" : ""}`}
+                onClick={() => setActivePatronTab(tab)}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
+
+          <div className="patrons-display-container">
+            <div className={`patrons-expansion-grid ${activePatronTab === "Chief Patrons" ? "chief-patrons-grid" : ""}`}>
+              {patronData[activePatronTab].map((patron, index) => (
+                <div key={index} className={`expanded-patron-card ${activePatronTab === "Chief Patrons" ? "chief-patron-card" : ""}`}>
+                  <div className="patron-card-inner">
+                    <div className="patron-image-box">
+                      <img src={patron.image} alt={patron.name} />
+                      <div className="patron-collapsed-info">
+                        <h3>{patron.name}</h3>
+                      </div>
+                    </div>
+                    <div className="patron-info-box">
+                      <h3 className="patron-name">{patron.name}</h3>
+                      <p className="patron-role">{patron.role}</p>
+                      {patron.org && <p className="patron-org">{patron.org}</p>}
+                      <a href={patron.linkedin} target="_blank" rel="noopener noreferrer" className="patron-linkedin-btn">
                         <Linkedin size={16} />
                         LinkedIn
                       </a>
