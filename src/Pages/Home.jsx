@@ -14,6 +14,10 @@ import Ideathon from "../components/Ideathon.jsx";
 const Home = () => {
   const [activeGuestTab, setActiveGuestTab] = useState("Chief Guest");
 
+  const handleDownload = () => {
+    window.open("https://14wgjdss3w.ufs.sh/f/ImvjWigzci0ZJ46h0FpQ5jLQfDS1GUPkB0KspceuJ9oV8r74", "_blank");
+  };
+
   const guestData = {
     "Chief Guest": [
       {
@@ -202,9 +206,6 @@ const Home = () => {
                 </div>
               </div>
 
-              <button className="download-btn">
-                REQUEST  BROCHURE ➜
-              </button>
             </div>
 
             {/* RIGHT IMAGE */}
@@ -218,7 +219,7 @@ const Home = () => {
               </div>
 
               <div className="request-btn">
-                <button className="button">
+                <button className="button" onClick={handleDownload}>
                   <p className="button__text">
                     <span style={{ "--index": 0 }}>R</span>
                     <span style={{ "--index": 1 }}>E</span>
