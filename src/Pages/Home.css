@@ -59,14 +59,55 @@ html {
   min-height: 100vh;
   border-radius: 30px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
+  gap: 2rem;
   width: 100%;
   padding-top: 110px;
-  padding-left: 30px;
-  /* Aligned exactly with Artificial Intelligence text */
-  /* Restore to fix 'page gone above' */
 }
+
+.hero-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-register-btn {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  padding: 1.1rem 2.8rem;
+  border-radius: 50px;
+  font-size: 1.35rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero-register-btn:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 20px 35px -5px rgba(59, 130, 246, 0.6);
+  background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
+}
+
+.btn-arrow {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.hero-register-btn:hover .btn-arrow {
+  transform: translateX(8px);
+}
+
 
 @media screen and (max-width: 768px) {
   .mobile-hero-img {
@@ -2560,4 +2601,269 @@ html {
   .patron-card {
     max-width: 100%;
   }
-}
+}
+
+/* ════════════════════════════════════════
+   JUDGES SECTION
+   Reusing the premium hover-extend pattern
+════════════════════════════════════════ */
+.judges-wrapper {
+  padding: 100px 8%;
+  background-color: #ffffff;
+  background-image: radial-gradient(#e2e8f0 1.5px, transparent 1.5px);
+  background-size: 40px 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative Background Blobs */
+.judges-wrapper::before,
+.judges-wrapper::after {
+  content: '';
+  position: absolute;
+  width: 50vw;
+  height: 50vw;
+  border-radius: 50%;
+  filter: blur(120px);
+  z-index: 0;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.judges-wrapper::before {
+  top: -10%;
+  right: -10%;
+  background: radial-gradient(circle, #005245 0%, transparent 70%);
+}
+
+.judges-wrapper::after {
+  bottom: -10%;
+  left: -10%;
+  background: radial-gradient(circle, #3b82f6 0%, transparent 70%);
+}
+
+.judges-headings-container {
+  position: relative;
+  z-index: 10;
+  max-width: 800px;
+  margin-bottom: 60px;
+}
+
+
+.judges-tag {
+  display: inline-block;
+  padding: 8px 16px;
+  background: rgba(0, 82, 69, 0.08);
+  color: var(--teal);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.judges-main-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 52px;
+  color: var(--navy);
+  margin-bottom: 20px;
+}
+
+.judges-description {
+  color: var(--muted);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.judges-display-container {
+  width: 100%;
+}
+
+.judges-expansion-grid {
+  display: flex;
+  gap: 24px;
+  height: 480px;
+  width: 100%;
+}
+
+.expanded-judge-card {
+  flex: 1;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: flex 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.expanded-judge-card:hover {
+  flex: 2.2;
+}
+
+.judge-card-inner {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+/* Image Box */
+.judge-image-box {
+  width: 100%;
+  min-width: 100%;
+  height: 100%;
+  transition: min-width 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.judge-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.expanded-judge-card:hover .judge-image-box {
+  min-width: 40%;
+}
+
+.expanded-judge-card:hover .judge-image-box img {
+  transform: scale(1.05);
+}
+
+/* Info Overlays on Collapsed */
+.judge-collapsed-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 40px 25px 25px;
+  background: linear-gradient(to top, rgba(11, 31, 58, 0.9), transparent);
+  color: white;
+  z-index: 2;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.judge-collapsed-info h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  margin-bottom: 4px;
+  font-weight: 800;
+}
+
+.judge-collapsed-info p {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+.expanded-judge-card:hover .judge-collapsed-info {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+/* Expanded Info Box */
+.judge-info-box {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: white;
+  opacity: 0;
+  transform: translateX(20px);
+  transition: all 0.5s ease 0.2s;
+  pointer-events: none;
+}
+
+.expanded-judge-card:hover .judge-info-box {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.judge-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  color: var(--navy);
+  margin-bottom: 10px;
+  font-weight: 800;
+}
+
+.judge-role {
+  color: var(--teal);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.judge-bio {
+  color: var(--muted);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.judge-linkedin-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 24px;
+  border: 1.5px solid var(--teal);
+  border-radius: 50px;
+  color: var(--teal);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.judge-linkedin-btn:hover {
+  background: var(--teal);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 82, 69, 0.2);
+}
+
+@media screen and (max-width: 900px) {
+  .judges-expansion-grid {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .expanded-judge-card {
+    height: auto;
+    flex: none !important;
+  }
+  
+  .expanded-judge-card:hover {
+    flex: none !important;
+  }
+  
+  .judge-card-inner {
+    flex-direction: column;
+  }
+  
+  .judge-image-box {
+    height: 350px;
+    min-width: 100% !important;
+  }
+  
+  .judge-info-box {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+    padding: 30px;
+  }
+}
+

@@ -10,9 +10,11 @@ import pharma from "../photos/pharma.png";
 import overview from "../photos/overview.png";
 import cheif from "../photos/chief.png";
 import Ideathon from "../components/Ideathon.jsx";
+import RegisterPopup from "../components/RegisterPopup.jsx";
 
 const Home = () => {
   const [activeGuestTab, setActiveGuestTab] = useState("Chief Guest");
+  const [showRegisterPopup, setShowRegisterPopup] = useState(false);
 
   const handleDownload = () => {
     window.open("https://14wgjdss3w.ufs.sh/f/ImvjWigzci0ZJ46h0FpQ5jLQfDS1GUPkB0KspceuJ9oV8r74", "_blank");
@@ -139,6 +141,31 @@ const Home = () => {
     ],
   };
 
+  const judgeData = [
+    {
+      name: "JYOTI SINGH",
+      role: "Honorable Judge",
+      image: "https://ljce5xqitn.ufs.sh/f/IJaVNK1rdRloH8qdXVAskDlvwbSeBxm7rAInh62KpYsdayg9",
+      bio: "Associate professor, CGC landran.",
+      linkedin: "#",
+    },
+    {
+      name: "Dr. SHAVETA SHARMA",
+      role: "Honorable Judge",
+      image: "https://ljce5xqitn.ufs.sh/f/IJaVNK1rdRloPcfhtQMOs7USJcW9mxTYH4o3eraQyFZEzBpi",
+      bio: "Assistant professor, CGC landran.",
+      linkedin: "#",
+    },
+    {
+      name: "Dr. AMARJOT KAUR GREWAL",
+      role: "Honorable Judge",
+      image: "https://ljce5xqitn.ufs.sh/f/IJaVNK1rdRloxDSeX8lYQGai9ce5WdpZXtqFJST7zuMjwvhL",
+      bio: "Professor, Chitkara College of Pharmacy.",
+      linkedin: "#",
+    },
+  ];
+
+
   return (
     <div className="home-page-wrapper">
       <div className="home-page-container">
@@ -153,6 +180,7 @@ const Home = () => {
             <Countdown />
           </div>
         </section>
+
 
         {/* overview section */}
         <section className="overview-section" loading="lazy">
@@ -531,6 +559,44 @@ const Home = () => {
           <Tab />
         </section>
 
+        {/* JUDGES SECTION */}
+        <section className="judges-wrapper" loading="lazy">
+          <div className="judges-headings-container">
+            <span className="judges-tag" id="judges">CONFERENCE JUDGES</span>
+            <h2 className="judges-main-title">Distinguished Evaluation Panel</h2>
+            <p className="judges-description">
+              Meet the eminent experts who will be evaluating the groundbreaking research and innovations at our conference.
+            </p>
+          </div>
+
+          <div className="judges-display-container">
+            <div className="judges-expansion-grid">
+              {judgeData.map((judge, index) => (
+                <div key={index} className="expanded-judge-card">
+                  <div className="judge-card-inner">
+                    <div className="judge-image-box">
+                      <img src={judge.image} alt={judge.name} />
+                      <div className="judge-collapsed-info">
+                        <h3>{judge.name}</h3>
+                        <p>{judge.role}</p>
+                      </div>
+                    </div>
+                    <div className="judge-info-box">
+                      <h3 className="judge-name">{judge.name}</h3>
+                      <p className="judge-role">{judge.role}</p>
+                      {judge.bio && <p className="judge-bio">{judge.bio}</p>}
+                      <a href={judge.linkedin} target="_blank" rel="noopener noreferrer" className="judge-linkedin-btn">
+                        <Linkedin size={16} />
+                        LinkedIn
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <Ideathon />
 
         {/* CALL FOR SPEAKERS SECTION */}
@@ -635,8 +701,10 @@ const Home = () => {
       </div>
 
       <Footer />
+      {showRegisterPopup && <RegisterPopup closePopup={() => setShowRegisterPopup(false)} startWithForm={true} />}
     </div>
   );
 };
+
 
 export default Home;

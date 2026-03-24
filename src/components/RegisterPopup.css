@@ -15,8 +15,6 @@
   z-index: 999;
 }
 
-/* Popup Box */
-
 .popup-container{
   background:white;
   width:520px;
@@ -26,6 +24,15 @@
   text-align:center;
   box-shadow:0 10px 30px rgba(0,0,0,0.25);
 }
+
+.submission-popup-container {
+  max-width: 600px;
+  padding: 0;
+  overflow: hidden;
+  background: transparent;
+  box-shadow: none;
+}
+
 
 /* Close button */
 

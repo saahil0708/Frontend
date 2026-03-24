@@ -100,7 +100,7 @@ const Navbar = () => {
         </ul>
 
         {/* Desktop CTAs */}
-        {/* <div className="navbar__actions">
+        <div className="navbar__actions">
           <button
             type="button"
             className="navbar__btn navbar__btn--register"
@@ -112,15 +112,7 @@ const Navbar = () => {
                     strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </button>
-
-          <Link to="/login" className="navbar__btn navbar__btn--login">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <circle cx="12" cy="8" r="4" stroke="currentColor" strokeWidth="2"/>
-              <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-            </svg>
-            Login
-          </Link>
-        </div> */}
+        </div>
 
         {/* Hamburger */}
         <button
@@ -162,7 +154,7 @@ const Navbar = () => {
           })}
         </nav>
 
-        {/* <div className="nav-drawer__footer">
+        <div className="nav-drawer__footer">
           <button
             type="button"
             className="nav-drawer__register"
@@ -170,10 +162,7 @@ const Navbar = () => {
           >
             Register Now
           </button>
-          <Link to="/login" className="nav-drawer__login" onClick={closeMenu}>
-            Login
-          </Link>
-        </div> */}
+        </div>
       </div>
 
       {/* Backdrop */}
@@ -184,8 +173,9 @@ const Navbar = () => {
       />
 
       {/* Register Popup */}
-      {showPopup && <RegisterPopup closePopup={() => setShowPopup(false)} />}
+      {showPopup && <RegisterPopup closePopup={() => setShowPopup(false)} startWithForm={true} />}
     </>
+
   );
 };
 
