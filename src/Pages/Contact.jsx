@@ -49,7 +49,7 @@ const Contact = () => {
               <div className="info-text">
                 <h3>Call Us</h3>
                 <p>Mon-Fri, 9am - 6pm (IST)</p>
-                <span>+91 176 250 7222</span>
+                <span>+91 97819 49789</span>
               </div>
             </div>
 
