@@ -1,0 +1,164 @@
+.pdf-reveal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  overflow: hidden;
+  perspective: 2000px;
+}
+
+.origami-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  transform-style: preserve-3d;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.origami-panel {
+  position: absolute;
+  top: 0;
+  width: 25%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 5s cubic-bezier(0.645, 0.045, 0.355, 1);
+  background: #8B0000;
+}
+
+.panel-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  box-shadow: inset 0 0 100px rgba(0,0,0,0.5);
+  backface-visibility: hidden;
+  border: 0.5px solid rgba(0,0,0,0.1);
+}
+
+/* Left Side Setup */
+.left-outer {
+  left: 0;
+  transform-origin: left;
+}
+.left-inner {
+  left: 100%;
+  width: 125%; 
+  transform-origin: left;
+  clip-path: url(#wave-left);
+}
+
+/* Right Side Setup */
+.right-outer {
+  right: 0;
+  left: auto;
+  transform-origin: right;
+}
+.right-inner {
+  right: 100%;
+  width: 125%; 
+  transform-origin: right;
+  clip-path: url(#wave-right);
+}
+
+/* Folding Logic */
+.left-outer.open {
+  transform: rotateY(-90deg);
+}
+.left-inner.open {
+  transform: rotateY(-170deg); /* Nearly fold back onto the outer panel */
+}
+
+.right-outer.open {
+  transform: rotateY(90deg);
+}
+.right-inner.open {
+  transform: rotateY(170deg);
+}
+
+/* Added shading for 3D effect during fold */
+.origami-panel::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  opacity: 0;
+  transition: opacity 5s ease;
+  pointer-events: none;
+}
+
+.origami-panel.open::after {
+  opacity: 0.6;
+}
+
+.pdf-content-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transform: scale(1.1);
+  transition: opacity 2s ease, transform 2s ease;
+  transition-delay: 4.5s;
+}
+
+.pdf-content-container.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.pdf-close-btn {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 12px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.pdf-close-btn:hover {
+  background: #B22222;
+  transform: scale(1.1);
+}
+
+.pdf-viewer-wrapper {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+
+.pdf-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .pdf-close-btn {
+    top: 15px;
+    right: 15px;
+    padding: 10px;
+  }
+}

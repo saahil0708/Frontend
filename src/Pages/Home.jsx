@@ -11,13 +11,15 @@ import overview from "../photos/overview.png";
 import cheif from "../photos/chief.png";
 import Ideathon from "../components/Ideathon.jsx";
 import RegisterPopup from "../components/RegisterPopup.jsx";
+import PdfReveal from "../components/PdfReveal.jsx";
 
 const Home = () => {
   const [activeGuestTab, setActiveGuestTab] = useState("Chief Guest");
   const [showRegisterPopup, setShowRegisterPopup] = useState(false);
+  const [showHandbook, setShowHandbook] = useState(false);
 
-  const handleDownload = () => {
-    window.open("https://14wgjdss3w.ufs.sh/f/ImvjWigzci0ZJ46h0FpQ5jLQfDS1GUPkB0KspceuJ9oV8r74", "_blank");
+  const handleHandbookClick = () => {
+    setShowHandbook(true);
   };
 
   const guestData = {
@@ -254,7 +256,7 @@ const Home = () => {
               </div>
 
               <div className="request-btn">
-                <button className="button" onClick={handleDownload}>
+                <button className="button" onClick={handleHandbookClick}>
                   <p className="button__text">
                     <span style={{ "--index": 0 }}>R</span>
                     <span style={{ "--index": 1 }}>E</span>
@@ -266,14 +268,14 @@ const Home = () => {
                     <span style={{ "--index": 7 }}> </span>
                     <span style={{ "--index": 8 }}>.</span>
                     <span style={{ "--index": 9 }}> </span>
-                    <span style={{ "--index": 10 }}>B</span>
-                    <span style={{ "--index": 11 }}>R</span>
-                    <span style={{ "--index": 12 }}>O</span>
-                    <span style={{ "--index": 13 }}>C</span>
-                    <span style={{ "--index": 14 }}>H</span>
-                    <span style={{ "--index": 15 }}>U</span>
-                    <span style={{ "--index": 16 }}>R</span>
-                    <span style={{ "--index": 17 }}>E</span>
+                    <span style={{ "--index": 10 }}>H</span>
+                    <span style={{ "--index": 11 }}>A</span>
+                    <span style={{ "--index": 12 }}>N</span>
+                    <span style={{ "--index": 13 }}>D</span>
+                    <span style={{ "--index": 14 }}>B</span>
+                    <span style={{ "--index": 15 }}>O</span>
+                    <span style={{ "--index": 16 }}>O</span>
+                    <span style={{ "--index": 17 }}>K</span>
                   </p>
 
                   <div className="button__circle">
@@ -709,6 +711,7 @@ const Home = () => {
 
       <Footer />
       {showRegisterPopup && <RegisterPopup closePopup={() => setShowRegisterPopup(false)} startWithForm={true} />}
+      {showHandbook && <PdfReveal pdfUrl="https://14wgjdss3w.ufs.sh/f/ImvjWigzci0ZJ46h0FpQ5jLQfDS1GUPkB0KspceuJ9oV8r74" onClose={() => setShowHandbook(false)} />}
     </div>
   );
 };
