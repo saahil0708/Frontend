@@ -146,14 +146,14 @@ const Home = () => {
       name: "JYOTI SINGH",
       role: "Honorable Judge",
       image: "https://ljce5xqitn.ufs.sh/f/IJaVNK1rdRloH8qdXVAskDlvwbSeBxm7rAInh62KpYsdayg9",
-      bio: "Associate professor, CGC landran.",
+      bio: "Associate Professor, CGC landran.",
       linkedin: "#",
     },
     {
       name: "Dr. SHAVETA SHARMA",
       role: "Honorable Judge",
       image: "https://ljce5xqitn.ufs.sh/f/IJaVNK1rdRloPcfhtQMOs7USJcW9mxTYH4o3eraQyFZEzBpi",
-      bio: "Assistant professor, CGC landran.",
+      bio: "Associate Professor, CGC landran.",
       linkedin: "#",
     },
     {
@@ -161,6 +161,13 @@ const Home = () => {
       role: "Honorable Judge",
       image: "https://ljce5xqitn.ufs.sh/f/IJaVNK1rdRloxDSeX8lYQGai9ce5WdpZXtqFJST7zuMjwvhL",
       bio: "Professor, Chitkara College of Pharmacy.",
+      linkedin: "#",
+    },
+    {
+      name: "Dr. SANDIP KUMAR",
+      role: "Honorable Judge",
+      image: "https://ljce5xqitn.ufs.sh/f/IJaVNK1rdRloWkgcqJEutXlG6kjpgLiMC8hEnRS2KcQyZdTv",
+      bio: "Professor, CCP, Chitkara University.",
       linkedin: "#",
     },
   ];
