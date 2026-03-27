@@ -711,7 +711,7 @@ const Home = () => {
 
       <Footer />
       {showRegisterPopup && <RegisterPopup closePopup={() => setShowRegisterPopup(false)} startWithForm={true} />}
-      {showHandbook && <PdfReveal pdfUrl="https://14wgjdss3w.ufs.sh/f/ImvjWigzci0ZJ46h0FpQ5jLQfDS1GUPkB0KspceuJ9oV8r74" onClose={() => setShowHandbook(false)} />}
+      {showHandbook && <PdfReveal pdfUrl="https://14wgjdss3w.ufs.sh/f/ImvjWigzci0Z244fMYWC0SG3iL8EovD4plT5B7zyxXsfZbjQ" onClose={() => setShowHandbook(false)} />}
     </div>
   );
 };
